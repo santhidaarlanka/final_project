@@ -49,7 +49,7 @@ assign zero = mult_zero | add_zero;
 assign NaN = mult_NaN | add_NaN;
 assign precisionLost = mult_precisionLost | add_precisionLost; 
 endmodule
-# MULTIPLICATION:
+**MULTIPLICATION:**
 //float multi multiplier floating point numbers.
 module float_multi(num1, num2, result, overflow, zero, NaN, precisionLost);
 //Operands
