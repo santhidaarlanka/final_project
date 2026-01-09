@@ -8,6 +8,7 @@ output zero, // zero flag
 output NaN, // Not-a-Number flag 
 output precisionLost // precision lost flag
 );
+
 // Internal signals from the multiplier stage 
 wire [15:0] mult_result;
 wire mult_overflow; 
@@ -355,7 +356,7 @@ end
 endcase 
 end
 endmodule
-ADDITION:
+**ADDITION:**
 //float adder adds floating point numbers.
 module float_adder(num1, num2, result, overflow, zero, NaN, precisionLost);
 //Ports
@@ -532,7 +533,7 @@ smallNum = num2;
 end
 end 
 endmodule
-PRECISION CONTROL:
+**PRECISION CONTROL:**
 module Reduction_and8bit(input [7:0] in,output out); 
 wire w1,w2,w3,w4,w5,w6;
 and(w1,in[1],in[0]);
@@ -664,7 +665,7 @@ assign div_temp = a/b;
 assign div = div_temp[24:0]; 
 endmodule
 
-NORMALIZATION AND SHIFTING:
+**NORMALIZATION AND SHIFTING:**
 module normalizeMandfindShift( 
 input[23:0] M_result,
 input M_carry, 
@@ -835,7 +836,7 @@ endcase
 end
 end 
 endmodule
-SPECIAL CASES
+**SPECIAL CASES**
 module mul(
 input [31:0] n1,
 input [31:0] n2,
@@ -1013,7 +1014,7 @@ mul mul_1(a,b,fprod,Overflow_mul, Underflow_mul,Exception_mul);
 //fpadd add(fprod,acc,clk,out);
 add_sub add_1(fprod,acc,out,1'b0,Overflow_add,Underflow_add,Exception_add); 
 endmodule
-DYNAMIC PRECISION CONTROL MAC
+**DYNAMIC PRECISION CONTROL MAC**
 module dynamic_precision_fp_mac( 
 input clk,
 input reset,
